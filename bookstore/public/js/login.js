@@ -8,7 +8,7 @@ $(document).ready(function(){
             url: "/pages/login.html",
             method: "POST",
             contentType: "application/json",
-            data: JSON.stringify("login_username=" + login_username),
+            data: JSON.stringify([{"username": login_username}, {"password": login_password}]),
             dataType: "json",
 
 
