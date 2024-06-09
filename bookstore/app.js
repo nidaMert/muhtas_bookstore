@@ -42,7 +42,9 @@ app.post( "/pages/login.html", ( req, res ) => {
     }
     else if (req.body.event == "register")
     {
-        const register_queryquery = `INSERT INTO users (USERNAME,USER_MAIL,USER_PASSWORD) VALUES ('${req.body.username}', '${req.body.mail}' , '${req.body.password}')`;
+        const register_queryquery = `INSERT INTO users (USERNAME,USER_MAIL,USER_PASSWORD) VALUES ('${req.body.username}',
+                                                                                                         '${req.body.mail}',
+                                                                                                         '${req.body.password}')`;
         sql.query(connectionString, register_queryquery, (err, result) => {
             if (err) {
                 console.error('Sorgu çalıştırma hatası:', err);

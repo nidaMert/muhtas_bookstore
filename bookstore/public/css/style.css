@@ -432,31 +432,39 @@
 .top-section .container .row .column2 {
     height: 95%;
     width: 800px;
-    /*
-    background-color: rgb(224, 155, 90);
-    */
     position: relative;
     margin-left: 13px;
     padding: 100px;
     padding-top: 115px;
+    overflow: hidden; /* Carousel'in taşmasını önlemek için eklendi */
+}
+
+.top-section .container .row .column2 {
+    height: 95%;
+    width: 800px;
+    position: relative;
+    margin-left: 13px;
+    padding: 100px;
+    padding-top: 115px;
+    overflow: hidden; /* Carousel'in taşmasını önlemek için eklendi */
 }
 
 .top-section .container .row .column2 .inner-column {
     width: 620px;
     height: 300px;
-    /*background-color: chartreuse;*/
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     position: relative;
     padding: 0 35px;
+    overflow: hidden;  /*İçeriğin taşmasını önlemek için eklendi */
 }
 
 .top-section .container .row .column2 .inner-column .wrapper {
     max-width: 620px;
     width: 100%;
     position: relative;
+    overflow: hidden; /* İçeriğin taşmasını önlemek için eklendi */
 }
 
 .top-section .container .row .column2 .inner-column .wrapper .arrows {
@@ -475,37 +483,37 @@
     transform: translateY(-50%);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
     font-size: 1.25rem;
+    z-index: 10; /* Okların içerik üzerinde kalmasını sağlamak için eklendi */
 }
 
 .top-section .container .row .column2 .inner-column .wrapper .arrows:first-child {
-    left: -22px;
+    left: -1px;
 }
 
 .top-section .container .row .column2 .inner-column .wrapper .arrows:last-child {
-    right: -22px;
+    right: -1px;
 }
 
 .top-section .container .row .column2 .inner-column .wrapper .carousel {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: calc((100% / 3) - 12px);
-    gap: 16px;
-    overflow: hidden;
+    display: flex; /* Grid yerine flex kullanıyoruz */
+    transition: transform 0.5s ease; /* Geçiş animasyonu */
 }
 
-
 .top-section .container .row .column2 .inner-column .wrapper .carousel .card {
+    min-width: calc((100% / 3) - 11px); /* Her kartın genişliğini ayarlamak için */
     list-style: none;
     background-color: #F8EDE3;
-    border-radius: 8px;
     height: 300px;
-    padding-bottom: 15px;
+    margin: 0 15px 0 15px;
+    margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     cursor: pointer;
 }
+
+
 
 .top-section .container .row .column2 .inner-column .wrapper .carousel .card h2{
     font-family: "Poppins", sans-serif;

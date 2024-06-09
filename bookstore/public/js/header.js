@@ -35,10 +35,3 @@ template.innerHTML = `
       
 `;
 document.body.appendChild(template.content);
-
-/*
-const headerDiv = document.createElement('div');
-headerDiv.innerHTML = ``;
-var header = document.querySelector(".header");
-header.appendChild(headerDiv);
-*/
